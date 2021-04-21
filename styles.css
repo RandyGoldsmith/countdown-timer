@@ -16,8 +16,6 @@ body {
 
 .container {
     max-width: 960px;
-    padding-left: 1rem;
-    padding-right: 1rem;
     margin: auto;
 }
 
@@ -46,18 +44,54 @@ video {
     z-index: 1;
 }
 
-.form-content {
+.form-container {
     min-width: 600px;
     min-height: 300px;
     z-index: 2;
-    border-radius: 5px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    border-radius: 5px;
     margin: 0 auto;
     color: black;
     background: rgba(255, 255, 255, 0.85);
 }
 
-@media screen and () {
+.form {
+    min-width: 500px;
+    margin: 0 auto;
+}
 
+.center {
+    margin: 0 auto;
+}
+
+.custom-countdown {
+    margin-top: 0;
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+    .form-container {
+        min-width: 350px;
+        min-height: 150px;
+    }
+
+    .form {
+        min-width: unset;
+        width: 350px;
+        }
+}
+
+@media screen and (max-width: 640px) {
+    .form-container {
+        min-width: unset;
+        width: 95vw;
+    }
+
+    .form {
+        width: 200px;
+    }
 }
