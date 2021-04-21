@@ -44,7 +44,7 @@ video {
     z-index: 1;
 }
 
-.form-container {
+.component-container {
     min-width: 600px;
     min-height: 300px;
     z-index: 2;
@@ -91,15 +91,37 @@ label {
     margin: 20px 0;
 }
 
+/*Countdown timer component*/
+.countdown-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
 
+li {
+    list-style: none;
+    display: inline-block;
+    font-size: 30px;
+}
 
+li span {
+    display: block;
+    text-align: center;        
+    font-weight: bold;
+    font-size: 60px;
+}
+
+ul {
+    padding-left: 0px;
+    display: flex;
+    justify-content: space-between;
+}
 
 @media screen and (max-width: 500px) {
     body {
         overflow-y: hidden;
     }
 
-    .form-container {
+    .component-container {
         min-height: 200px;
     }
 
@@ -107,7 +129,14 @@ label {
         min-width: unset;
         width: 350px;
         }
-
+    
+        li {
+            font-size: 15px;
+        }
+    
+        li span {
+            font-size: 30px;
+        }
         
 }
 
@@ -116,7 +145,7 @@ label {
         overflow-y: hidden;
     }
 
-    .form-container {
+    .component-container {
         min-width: unset;
         width: 95vw;
     }
@@ -124,4 +153,14 @@ label {
     .form {
         width: 350px;
     }
+
+    li {
+        font-size: 25px;
+    }
+
+    li span {
+        font-size: 50px;
+    }
+
+    
 }
