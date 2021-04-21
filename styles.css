@@ -40,7 +40,7 @@ video {
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.15);
     z-index: 1;
 }
 
@@ -54,12 +54,27 @@ video {
     border-radius: 5px;
     margin: 0 auto;
     color: black;
+    padding: 20px 50px;
     background: rgba(255, 255, 255, 0.85);
 }
 
+.input-container {
+    position: relative;
+    top:0;
+    
+}
+
 .form {
-    min-width: 500px;
+    min-width: 480px;
     margin: 0 auto;
+}
+
+.form-example {
+    margin: 10px 0;
+}
+
+label {
+    font-weight: bold;
 }
 
 .center {
@@ -67,7 +82,13 @@ video {
 }
 
 .custom-countdown {
-    margin-top: 0;
+    margin-top: 10px;
+}
+
+.btn,
+.btn-success {
+    width: 100%;
+    margin: 20px 0;
 }
 
 
@@ -79,8 +100,7 @@ video {
     }
 
     .form-container {
-        min-width: 350px;
-        min-height: 150px;
+        min-height: 200px;
     }
 
     .form {
@@ -88,22 +108,20 @@ video {
         width: 350px;
         }
 
-        input {
-            width: 100%;
-        }
+        
 }
 
 @media screen and (max-width: 640px) {
     body {
         overflow-y: hidden;
     }
-    
+
     .form-container {
         min-width: unset;
         width: 95vw;
     }
 
     .form {
-        width: 200px;
+        width: 350px;
     }
 }
