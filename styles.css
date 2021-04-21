@@ -74,6 +74,10 @@ video {
 
 
 @media screen and (max-width: 500px) {
+    body {
+        overflow-y: hidden;
+    }
+
     .form-container {
         min-width: 350px;
         min-height: 150px;
@@ -90,6 +94,10 @@ video {
 }
 
 @media screen and (max-width: 640px) {
+    body {
+        overflow-y: hidden;
+    }
+    
     .form-container {
         min-width: unset;
         width: 95vw;
