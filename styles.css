@@ -77,12 +77,9 @@ label {
     font-weight: bold;
 }
 
-.center {
-    margin: 0 auto;
-}
-
 .custom-countdown {
     margin-top: 10px;
+    text-align: center;
 }
 
 .btn,
@@ -115,6 +112,29 @@ ul {
     display: flex;
     justify-content: space-between;
 }
+
+/*countdown-complete component*/
+.completed-title {
+    text-align: center;
+    animation: flashing 4s infinite;
+}
+
+@keyframes flashing {
+    0% {
+        color: black;
+    }
+
+    50% {
+        color: red;
+        transform: scale(1.25);
+    }
+
+    100% {
+        color: black;
+    }
+}
+
+
 
 @media screen and (max-width: 500px) {
     body {
