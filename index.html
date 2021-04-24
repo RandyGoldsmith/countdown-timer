@@ -17,7 +17,7 @@
         </div>
         <div class="overlay"></div>
         <div class="component-container">
-            <div class="input-container" >
+            <div class="input-container" id="input-container">
             <h1 class="custom-countdown">Custom Countdown</h1>
                 <form id="form">
                     <div class="form-example">
@@ -32,13 +32,13 @@
                 </form>
             </div>
         
-            <div class="countdown-timer" hidden>
-                <h1 class="countdown-title">Timer</h1>
+            <div class="countdown-timer" id="countdown-timer" hidden>
+                <h1 class="countdown-title" id="countdown-title"></h1>
                 <ul>
-                    <li><span>3</span>Days</li>
-                    <li><span>12</span>Hours</li>
-                    <li><span>5</span>Minutes</li>
-                    <li><span>40</span>Seconds</li>
+                    <li><span></span>Days</li>
+                    <li><span></span>Hours</li>
+                    <li><span></span>Minutes</li>
+                    <li><span></span>Seconds</li>
                 </ul>
                 <button class="btn btn-danger">Reset</button>
             </div>
