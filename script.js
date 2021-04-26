@@ -14,6 +14,7 @@ let countTitle = '';
 let countDate = '';
 let countDateValue = new Date();
 let activeCount;
+let savedCount;
 const second = 1000;
 const minute = second * 60;
 const hour = minute * 60;
@@ -31,30 +32,52 @@ function countdown() {
         const hours = Math.floor((difference % day) / hour);
         const minutes = Math.floor((difference % hour) / minute);
         const seconds = Math.floor((difference % minute) / second);
+
+        inputContainer.hidden = true;
     
         if(difference < 0) {
             countdownTimer.hidden = true;
             completeContainer.hidden = false;
+            clearInterval(activeCount);      
         } else {
+            completeContainer.hidden = true;
+            countdownTimer.hidden = false;
             countdownTitle.textContent = `${countTitle}`;
             time[0].textContent = `${days}`;
             time[1].textContent = `${hours}`;
             time[2].textContent = `${minutes}`;
             time[3].textContent = `${seconds}`;
-        }
-        
-        inputContainer.hidden = true;
-        
+            
+        }      
+
     }, second);
 }
+
+
 
 
 function getData(e) {
     e.preventDefault();
     countTitle = e.srcElement[0].value;
     countValue = e.srcElement[1].value; 
+    savedCount = {
+        title: countTitle,
+        date: countValue
+    }
+    localStorage.setItem('countdown-timer', JSON.stringify(savedCount)) 
     countDateValue = new Date(countValue).getTime();
     countdown();
+}
+
+function populateLocalStorageItems() {
+    if(localStorage.getItem('countdown-timer')) {
+        inputContainer.hidden = true;
+        savedCount = JSON.parse(localStorage.getItem('countdown-timer'));
+        countTitle = savedCount.title;
+        countValue = savedCount.date;
+        countDateValue = new Date(countValue).getTime();
+        countdown();
+    }    
 }
 
 function reset() {
@@ -64,9 +87,11 @@ function reset() {
     inputContainer.hidden = false;
     countdownTimer.hidden = true;
     completeContainer.hidden = true;
+    localStorage.clear();
 }
 
 formData.addEventListener('submit', getData);
 resetBtn.addEventListener('click', reset);
 completeBtn.addEventListener('click', reset);
 
+populateLocalStorageItems();
